@@ -27,7 +27,7 @@ rm -rf ./xiazaiwenjian.sh >/dev/null 2>&1
 rm -rf /Tongbumulu/axel.log >/dev/null 2>&1
 echo "爬取文件名并追加下载命令及地址..."
 sleep 1
-python3 untitled.py 2>&1 | tee xiazaiwenjian.sh
+python3 tongbu.py 2>&1 | tee xiazaiwenjian.sh
 echo "完成"
 sleep 1
 echo "开始下载..."
