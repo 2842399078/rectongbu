@@ -1,7 +1,5 @@
 #/bin/bash
 
-
-
 huanjinganzhuang(){
 clear;
 sleep 1
@@ -15,7 +13,7 @@ if [ ! -f "/usr/bin/python3" ]; then
 			fi
             echo -e "\033[41;37m 环境检查完毕，应该可以正常运行了吧QAQ \033[0m"
             sleep 3
-            bash $0;
+            exit;
 }
 
 mashangtongbu(){
@@ -23,6 +21,7 @@ sleep 1
 clear;
 pkill python3
 pkill axel
+mkdir /Tongbumulu >/dev/null 2>&1
 rm -rf ./xiazaiwenjian.sh >/dev/null 2>&1
 rm -rf /Tongbumulu/axel.log >/dev/null 2>&1
 echo "爬取文件名并追加下载命令及地址..."
@@ -40,25 +39,27 @@ echo "同步完成，请自行检查文件完整性! @同步开始时间：${sta
 rm -rf ./xiazaiwenjian.sh >/dev/null 2>&1
 exit;
 }
-meitianliangdiantongbu(){
+
+
+
+
+meitianlingdiantongbu(){
 yum install crontabs -y >/dev/null 2>&1
 systemctl enable crond >/dev/null 2>&1
 systemctl start crond >/dev/null 2>&1
 echo "写入同步命令..."
 sleep 1
-echo "0 2 * * * root /root/$0 -t >> /tmp/tmp.txt" >> /etc/crontab
+echo "00 00 * * * $PWD/$0 -t" >> /etc/crontab
 echo "加载同步任务..."
 crontab /etc/crontab >/dev/null 2>&1
 echo "完成啦QAQ"
 exit;
 }
+  
 
 
 
 Main(){
-cd /
-mkdir Tongbumulu >/dev/null 2>&1
-cd ~
 source ~/.bashrc
 sleep 2
 clear;
@@ -70,7 +71,7 @@ echo -e "\033[41;37m 当然，开源那是肯定的，不过感觉没什么用QA
 echo -e "\033[41;37m 开源地址: https://github.com/2842399078/rectongbu \033[0m"
 echo "(1) 安装脚本所需环境"
 echo "(2) 马上同步文件"
-echo "(3) 每天2:00同步文件(root)"
+echo "(3) 每天00:00同步文件(root)"
 echo "(4) 功能4 "
 echo "(5) 退出脚本"
 echo "----------------------------------"
@@ -90,22 +91,20 @@ case $input in
     4)
     echo "运行功能4 额! 这个功能作者没开发。"
     sleep 1
-    bash $0;;
+    exit;;
     5)
     exit;;
     *)
     echo -e "\033[41;37m 错误数字 \033[0m"
     sleep 2
-    bash $0;;
+    exit;;
 esac
 }
 
 while [ $1 ]; do
 	case $1 in
 		'-t' | '--tongbu' )
-			mashangtongbu
-			exit
-			;;
+			mashangtongbu;;
 	esac
 	shift
 done
