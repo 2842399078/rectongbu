@@ -67,7 +67,7 @@ echo -e "\033[41;37m 欢迎使用橙狐Recovery Redmi Note7 PRO 同步脚本 \03
 echo -e "\033[41;37m 同步完成的信息在/Tongbumulu下的axe.log有记录 \033[0m"
 echo -e "\033[41;37m 由于作者不怎么会编程，所以做得可能不怎么好 \033[0m"
 echo -e "\033[41;37m 当然，开源那是肯定的，不过感觉没什么用QAQ \033[0m"
-echo -e "\033[41;37m 开源地址:  \033[0m"
+echo -e "\033[41;37m 开源地址: https://github.com/2842399078/rectongbu \033[0m"
 echo "(1) 安装脚本所需环境"
 echo "(2) 马上同步文件"
 echo "(3) 每天2:00同步文件(root)"
