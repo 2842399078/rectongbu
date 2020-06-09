@@ -1,4 +1,3 @@
-＃rectongbu
 中文版说明:
 
 我使用的是GIthub的网页端
@@ -31,7 +30,7 @@ axel.log是同步日志
 
 由于作者才16岁，现在又初三，所以脚本简陋
 谢谢支持QAQ
-
+##################
 英语说明:  Google翻译提供支持
 Description in English: Supported by Google Translator
 
